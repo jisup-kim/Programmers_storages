@@ -3,15 +3,14 @@ def solution(s):
 
     check_list = []
     for i in range(len(s)):
-        x = s[i]
-        if len(check_list) == 0 and x == ")":
+        if len(check_list) == 0 and s[i] == ")":
             return False
         
-        elif x == "(":
-            check_list.append(x)
+        elif s[i] == "(":
+            check_list.append(s[i])
         else:
             open_x = check_list[-1]
-            if open_x == "(" and x == ")":
+            if open_x == "(" and s[i] == ")":
                 check_list.pop()
                 
     if len(check_list) == 0:
